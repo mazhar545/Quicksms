@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:Template-.YYYY.-.#####",
+ "creation": "2025-06-13 09:16:39.050789",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "template_for",
+  "content",
+  "user"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_for",
+   "fieldtype": "Data",
+   "label": "Template For",
+   "unique": 1
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Data",
+   "label": "Content For"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "user",
+   "options": "User"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "Template-.YYYY.-.#####"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-13 10:15:18.106898",
+ "modified_by": "Administrator",
+ "module": "QuickSms",
+ "name": "Sms Templates",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
