@@ -41,3 +41,4 @@ class SmsService:
         except Exception as e:
             frappe.log_error(frappe.get_traceback(), "4Jawaly SMS: Balance Fetch Error")
             return {"error": str(e)}
+        
