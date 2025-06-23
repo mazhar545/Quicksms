@@ -1,43 +1,51 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:template_for",
- "creation": "2025-06-13 09:16:39.050789",
+ "autoname": "field:contact_name",
+ "creation": "2025-06-16 13:54:42.582844",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "template_for",
-  "content",
-  "user"
+  "contact_name",
+  "contact_number",
+  "contact_code",
+  "department"
  ],
  "fields": [
   {
-   "fieldname": "template_for",
+   "fieldname": "contact_name",
    "fieldtype": "Data",
-   "label": "SMS Template",
+   "in_list_view": 1,
+   "label": "Contact Name",
    "unique": 1
   },
   {
-   "fieldname": "content",
+   "fieldname": "contact_number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Content"
+   "label": "Contact Number"
   },
   {
-   "fieldname": "user",
+   "fieldname": "contact_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Contact Code"
+  },
+  {
+   "fieldname": "department",
    "fieldtype": "Link",
-   "label": "user",
-   "options": "User"
+   "label": "Department ",
+   "options": "Contact Department"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-16 11:43:52.250596",
+ "modified": "2025-06-16 14:24:00.700509",
  "modified_by": "Administrator",
  "module": "QuickSms",
- "name": "SMS Templates",
+ "name": "SMS Contact",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

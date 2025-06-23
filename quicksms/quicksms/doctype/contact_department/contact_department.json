@@ -1,43 +1,29 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:template_for",
- "creation": "2025-06-13 09:16:39.050789",
+ "autoname": "field:department_name",
+ "creation": "2025-06-16 13:55:38.772392",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "template_for",
-  "content",
-  "user"
+  "department_name"
  ],
  "fields": [
   {
-   "fieldname": "template_for",
+   "fieldname": "department_name",
    "fieldtype": "Data",
-   "label": "SMS Template",
+   "label": "Department Name",
    "unique": 1
-  },
-  {
-   "fieldname": "content",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Content"
-  },
-  {
-   "fieldname": "user",
-   "fieldtype": "Link",
-   "label": "user",
-   "options": "User"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-16 11:43:52.250596",
+ "modified": "2025-06-16 14:36:51.655986",
  "modified_by": "Administrator",
  "module": "QuickSms",
- "name": "SMS Templates",
+ "name": "Contact Department",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

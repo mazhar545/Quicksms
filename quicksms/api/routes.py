@@ -25,7 +25,7 @@ def test_connection():
         return {"success": False, "error": str(e)}
 
 def update_connection_status(status, balance):
-    settings = frappe.get_doc("QuickSMS Settings")
+    settings = frappe.get_doc("Quick SMS Settings")
     settings.last_connection_status = status
     settings.available_balance = balance
     settings.save(ignore_permissions=True)

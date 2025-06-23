@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestSMSTemplates(FrappeTestCase):
+class TestSMSContact(FrappeTestCase):
 	pass

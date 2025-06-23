@@ -4,7 +4,7 @@ import frappe
 
 class SmsService:
     def __init__(self):
-        settings = frappe.get_doc("QuickSMS Settings")
+        settings = frappe.get_doc("Quick SMS Settings")
 
         self.app_id = settings.app_id.strip()
         self.app_secret = settings.get_password("app_secret").strip()  # ✅ For older Frappe versions
@@ -41,4 +41,3 @@ class SmsService:
         except Exception as e:
             frappe.log_error(frappe.get_traceback(), "4Jawaly SMS: Balance Fetch Error")
             return {"error": str(e)}
-        

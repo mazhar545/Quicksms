@@ -1,0 +1,38 @@
+{
+ "allow_roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "All"
+  }
+ ],
+ "creation": "2025-06-20 14:21:40.704411",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "documentation_url": "app/quick-sms-settings",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2025-06-23 10:47:45.113941",
+ "modified_by": "Administrator",
+ "module": "QuickSms",
+ "name": "Quick SMS",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "step": "Quick SMS Onboarding"
+  },
+  {
+   "step": "Creating Templates"
+  },
+  {
+   "step": "Creating Contacts"
+  },
+  {
+   "step": "SMS Send"
+  }
+ ],
+ "subtitle": "SMS,Fast SMS Service,Smooth process",
+ "success_message": "The Quick SMS  Module is all set up!",
+ "title": "Let's Set Up Your Quick SMS."
+}

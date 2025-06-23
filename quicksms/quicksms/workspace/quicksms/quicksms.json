@@ -1,0 +1,46 @@
+{
+ "charts": [
+  {
+   "chart_name": "Send SMS",
+   "label": "Total SMS Sent"
+  }
+ ],
+ "content": "[{\"id\":\"vnxzmdQJHg\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Quick SMS</span>\",\"col\":12}},{\"id\":\"SI8dvWeocp\",\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Quick SMS\",\"col\":12}},{\"id\":\"7IIq8O36x9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Total SMS Sent\",\"col\":12}},{\"id\":\"spvbi4ZIpf\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Quick SMS Settings\",\"col\":4}},{\"id\":\"1-pKFkV7oj\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"SMS  Contact List\",\"col\":3}},{\"id\":\"35BGLswMiA\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Send SMS\",\"col\":3}}]",
+ "creation": "2025-06-19 12:56:57.479403",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Quick SMS Settings",
+   "label": "Quick SMS Settings"
+  },
+  {
+   "custom_block_name": "SMS  Contact List",
+   "label": "SMS  Contact List"
+  },
+  {
+   "custom_block_name": "Send SMS",
+   "label": "Send SMS"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "up-line",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "QuickSMS",
+ "links": [],
+ "modified": "2025-06-20 14:22:23.897691",
+ "modified_by": "Administrator",
+ "module": "QuickSms",
+ "name": "QuickSMS",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 39.0,
+ "shortcuts": [],
+ "title": "QuickSMS"
+}

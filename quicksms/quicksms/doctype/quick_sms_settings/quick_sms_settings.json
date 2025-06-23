@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-12 09:31:35.436454",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "app_id",
+  "app_secret",
+  "base_url",
+  "last_connection_status",
+  "available_balance"
+ ],
+ "fields": [
+  {
+   "fieldname": "available_balance",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Available Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "app_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "App ID"
+  },
+  {
+   "fieldname": "app_secret",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "App Secret"
+  },
+  {
+   "fieldname": "base_url",
+   "fieldtype": "Data",
+   "label": "Base URL"
+  },
+  {
+   "fieldname": "last_connection_status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Connection Status",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-06-13 09:11:14.426534",
+ "modified_by": "Administrator",
+ "module": "QuickSms",
+ "name": "Quick SMS Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

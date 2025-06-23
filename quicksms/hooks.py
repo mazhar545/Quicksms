@@ -223,3 +223,14 @@ doc_events = {}
 override_whitelisted_methods = {
     "quick_sms.api.routes.get_sms_balance": "quick_sms.api.routes.get_sms_balance"
 }
+
+doctype_list_js = {
+    "SendSms": "public/js/sendsms_list.js"
+}
+
+
+scheduler_events = {
+    "hourly": [
+        "quicksms.quicksms.doctype.send_sms.send_sms.process_due_scheduled_sms"
+    ],
+}

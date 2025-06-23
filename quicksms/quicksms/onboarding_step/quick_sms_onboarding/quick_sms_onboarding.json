@@ -1,0 +1,20 @@
+{
+ "action": "Create Entry",
+ "creation": "2025-06-20 13:54:36.528005",
+ "description": "QuickSMS is a custom Frappe-based application designed to simplify and automate the process of sending SMS messages directly from your ERP system. Whether it\u2019s a one-time notification, a scheduled campaign, or department-wide announcements, QuickSMS makes it quick, consistent, and efficient.",
+ "docstatus": 0,
+ "doctype": "Onboarding Step",
+ "idx": 0,
+ "is_complete": 0,
+ "is_single": 1,
+ "is_skipped": 0,
+ "modified": "2025-06-23 10:10:02.084492",
+ "modified_by": "Administrator",
+ "name": "Quick SMS Onboarding",
+ "owner": "Administrator",
+ "reference_document": "Quick SMS Settings",
+ "show_form_tour": 0,
+ "show_full_form": 0,
+ "title": "Intro to Quick SMS",
+ "validate_action": 1
+}

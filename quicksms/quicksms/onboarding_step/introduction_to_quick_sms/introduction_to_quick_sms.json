@@ -1,0 +1,20 @@
+{
+ "action": "Go to Page",
+ "creation": "2025-06-20 12:06:28.259934",
+ "description": "Install Quick SMS and then you will have to set Settings Form From Quick SMS Settings",
+ "docstatus": 0,
+ "doctype": "Onboarding Step",
+ "idx": 0,
+ "is_complete": 0,
+ "is_single": 0,
+ "is_skipped": 0,
+ "modified": "2025-06-20 12:12:49.886226",
+ "modified_by": "Administrator",
+ "name": "Introduction To Quick SMS",
+ "owner": "Administrator",
+ "path": "app/quick-sms-settings",
+ "show_form_tour": 0,
+ "show_full_form": 0,
+ "title": "Lets Set Up Your Quick SMS",
+ "validate_action": 1
+}
