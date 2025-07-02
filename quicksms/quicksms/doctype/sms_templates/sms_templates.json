@@ -9,8 +9,7 @@
  "engine": "InnoDB",
  "field_order": [
   "template_for",
-  "content",
-  "user"
+  "content"
  ],
  "fields": [
   {
@@ -21,20 +20,14 @@
   },
   {
    "fieldname": "content",
-   "fieldtype": "Data",
+   "fieldtype": "Text Editor",
    "in_list_view": 1,
    "label": "Content"
-  },
-  {
-   "fieldname": "user",
-   "fieldtype": "Link",
-   "label": "user",
-   "options": "User"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-16 11:43:52.250596",
+ "modified": "2025-06-24 16:42:02.679591",
  "modified_by": "Administrator",
  "module": "QuickSms",
  "name": "SMS Templates",

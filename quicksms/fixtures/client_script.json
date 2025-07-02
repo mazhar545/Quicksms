@@ -1,0 +1,57 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Quick SMS Settings",
+  "enabled": 1,
+  "modified": "2025-06-18 14:16:35.753920",
+  "module": "QuickSms",
+  "name": "SMS Settings",
+  "script": "frappe.ui.form.on('Quick SMS Settings', {\r\n    refresh: function(frm) {\r\n        frm.add_custom_button(__('Test Connection'), function () {\r\n            frappe.call({\r\n                method: 'quicksms.api.routes.test_connection',\r\n                callback: function (r) {\r\n                    if (!r.exc && r.message && r.message.success) {\r\n                        frappe.msgprint({\r\n                            title: __('Connection Successful'),\r\n                            message: __('Connection to SMS API was successful.'),\r\n                            indicator: 'green'\r\n                        });\r\n                    } else {\r\n                        frappe.msgprint({\r\n                            title: __('Connection Failed'),\r\n                            message: r.message.error || 'Failed to connect.',\r\n                            indicator: 'red'\r\n                        });\r\n                    }\r\n\r\n                    // Reload form to reflect updated balance and status\r\n                    frm.reload_doc();\r\n                }\r\n            });\r\n        });\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Send SMS",
+  "enabled": 1,
+  "modified": "2025-06-19 09:37:30.729563",
+  "module": "QuickSms",
+  "name": "Sms Btn",
+  "script": "frappe.ui.form.on('Send SMS', {\r\n\trefresh(frm) {\r\n\r\n\t\tfrm.add_custom_button('Send SMS to All', () => {\r\n\t\t\t// If unsaved, save first then send\r\n\t\t\tif (frm.is_dirty() || frm.is_new()) {\r\n\t\t\t\tfrm.save().then(() => {\r\n\t\t\t\t\tsend_sms_to_all(frm);\r\n\t\t\t\t});\r\n\t\t\t} else {\r\n\t\t\t\tsend_sms_to_all(frm);\r\n\t\t\t}\r\n\t\t});\r\n\t}\r\n});\r\n\r\nfunction send_sms_to_all(frm) {\r\n\tfrappe.call({\r\n\t\tmethod: 'quicksms.quicksms.doctype.send_sms.send_sms.process_and_send_sms',\r\n\t\targs: {\r\n\t\t\tdocname: frm.doc.name\r\n\t\t},\r\n\t\tcallback: (r) => {\r\n\t\t\tfrappe.msgprint(r.message || 'SMS sent successfully.');\r\n\t\t\tfrm.reload_doc(); // Refresh to reflect any updates\r\n\t\t}\r\n\t});\r\n}\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Send SMS",
+  "enabled": 1,
+  "modified": "2025-06-19 09:39:09.738600",
+  "module": "QuickSms",
+  "name": "Available Balance",
+  "script": "frappe.listview_settings['Send SMS'] = {\r\n    onload(listview) {\r\n        frappe.call({\r\n            method: \"quicksms.quicksms.doctype.send_sms.send_sms.fetch_sms_balance_for_listview\", // \u2705 correct path now\r\n            callback: function(r) {\r\n                if (r.message && !r.message.error) {\r\n                    const balance = r.message.balance || 0;\r\n\r\n                    const $banner = $(`\r\n                        <div class=\"sms-balance-banner\" style=\"\r\n                            background-color: #e7f3fe;\r\n                            border-left: 6px solid #2196F3;\r\n    padding: 3px 10px;\r\n    margin: 5px 5px 5px 55px;\r\n                            font-size: 15px;\r\n                            font-weight: bold;\r\n                            border-radius: 6px;\">\r\n                            Available Balance: ${balance}\r\n                        </div>\r\n                    `);\r\n\r\n                    $(listview.page.$title_area).after($banner);\r\n                } else {\r\n                    console.error(\"Error fetching SMS balance:\", r.message?.error);\r\n                }\r\n            }\r\n        });\r\n    }\r\n};\r\n",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Send SMS",
+  "enabled": 1,
+  "modified": "2025-06-19 09:41:58.750321",
+  "module": "QuickSms",
+  "name": "Schedule Sms",
+  "script": "frappe.ui.form.on('Send SMS', {\r\n    refresh(frm) {\r\n        frm.add_custom_button('Send SMS to All', () => {\r\n            frappe.call({\r\n                method: 'quicksms.quicksms.doctype.send_sms.send_sms.process_and_send_sms',\r\n                args: { docname: frm.doc.name },\r\n                callback: (r) => {\r\n                    frappe.msgprint(r.message || 'SMS sent.');\r\n                    frm.reload_doc();\r\n                }\r\n            });\r\n        });\r\n\r\n        // Show/hide schedule fields\r\n        frm.toggle_display(['scheduled_date', 'scheduled_time'], frm.doc.schedule_sms);\r\n    },\r\n    schedule_sms(frm) {\r\n        frm.toggle_display(['scheduled_date', 'scheduled_time'], frm.doc.schedule_sms);\r\n    }\r\n});\r\n\r\n// Realtime alert for scheduled SMS\r\nfrappe.realtime.on(\"sms_sent\", function(data) {\r\n    frappe.show_alert(`SMS Sent: ${data.docname}`);\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Send SMS",
+  "enabled": 1,
+  "modified": "2025-06-18 13:48:25.037832",
+  "module": "QuickSms",
+  "name": "DepartmentContact",
+  "script": "frappe.ui.form.on('Send SMS', {\r\n    department(frm) {\r\n        // Fetch contacts based on the selected department\r\n        if (frm.doc.department) {\r\n            frappe.call({\r\n                method: \"frappe.client.get_list\",\r\n                args: {\r\n                    doctype: \"SMS Contact\",  // Correct DocType name\r\n                    filters: {\r\n                        department: frm.doc.department\r\n                    },\r\n                    fields: [\"contact_name\", \"contact_code\", \"contact_number\"]\r\n                },\r\n                callback: (response) => {\r\n                    if (response.message) {\r\n                        // Create a set to track unique contact codes for the selected department\r\n                        const uniqueContactCodes = new Set();\r\n\r\n                        // Clear existing rows in the child table before adding new ones\r\n                        frm.clear_table('numbers');\r\n\r\n                        response.message.forEach(contact => {\r\n                            // Only add the contact if it hasn't been added already for this department\r\n                            if (!uniqueContactCodes.has(contact.contact_code)) {\r\n                                uniqueContactCodes.add(contact.contact_code);\r\n\r\n                                // Add the contact code and phone number to the child table\r\n                                let child_row = frm.add_child('numbers'); // 'numbers' is the child table\r\n                                child_row.code = contact.contact_code;   // Set contact code in 'code' field\r\n                                child_row.phone_number = contact.contact_number; // Set contact number in 'phone_number' field\r\n\r\n                             \r\n                            }\r\n                        });\r\n\r\n                        frm.refresh_field('numbers');  // Refresh the child table to show updated rows\r\n                    } else {\r\n                        frappe.msgprint(\"No contacts found for this department.\");\r\n                    }\r\n                }\r\n            });\r\n        }\r\n    }\r\n});\r\n",
+  "view": "Form"
+ }
+]

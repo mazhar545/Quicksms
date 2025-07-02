@@ -229,8 +229,54 @@ doctype_list_js = {
 }
 
 
+fixtures = [
+    {
+        "dt": "Client Script",
+        "filters": [
+            ["name", "in", [
+                "DepartmentContact",
+                "SMS Settings",
+                "Sms Btn",
+                "Available Balance",
+                "Schedule Sms"
+            ]]
+        ]
+    },
+    {
+        "dt": "Custom HTML Block",
+        "filters": [
+            ["name", "in", [
+                "Send SMS",
+                "SMS  Contact List",  
+                "Quick SMS Settings"
+            ]]
+        ]
+    },
+    {
+        "dt": "Dashboard Chart",
+        "filters": [
+            ["name", "in", ["Send SMS"]]
+        ]
+    }
+]
+
+
+
+
 scheduler_events = {
-    "hourly": [
+    # "cron": {
+    #     "* * * * *": [
+    #         "quicksms.quicksms.doctype.send_sms.send_sms.process_due_scheduled_sms"
+    #     ]
+    # }
+    "cron": {
+    "*/10 * * * *": [
         "quicksms.quicksms.doctype.send_sms.send_sms.process_due_scheduled_sms"
-    ],
+    ]
 }
+
+}
+
+
+
+
